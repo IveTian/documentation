@@ -26,6 +26,20 @@
         "description": "Retrieves the current active version's prompt metadata (title, description, LLM configuration, and message list) by deployment ID, along with associated deployment and workspace information",
         "operationId": "getPromptByDeployId",
         "tags": ["Prompts"],
+        "x-codeSamples": [
+          {
+            "lang": "curl",
+            "source": "curl -X GET \"https://api.llmide.app/v1/prompts?deployId=dep_12345\" \\\n  -H \"Authorization: Bearer sk_live_xxx\""
+          },
+          {
+            "lang": "python",
+            "source": "import requests\n\nheaders = {\n    'Authorization': 'Bearer sk_live_xxx'\n}\n\nparams = {\n    'deployId': 'dep_12345'\n}\n\nresponse = requests.get('https://api.llmide.app/v1/prompts', headers=headers, params=params)\nprint(response.json())"
+          },
+          {
+            "lang": "javascript",
+            "source": "const response = await fetch('https://api.llmide.app/v1/prompts?deployId=dep_12345', {\n  method: 'GET',\n  headers: {\n    'Authorization': 'Bearer sk_live_xxx'\n  }\n});\n\nconst data = await response.json();\nconsole.log(data);"
+          }
+        ],
         "parameters": [
           {
             "name": "deployId",
